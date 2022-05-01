@@ -14,9 +14,13 @@ function Keyboard() {
       <div className="line2">{keys2.map((key) => {
         return <Key keyValue={key} />;
       })}</div>
-      <div className="line3">{keys3.map((key) => {
+      <div className="line3">
+        <Key keyValue={"ENTER"} bigKey/>
+        {keys3.map((key) => {
         return <Key keyValue={key} />;
-      })}</div>
+      })}
+      <Key keyValue={"DELETE"} bigKey/>
+      </div>
     </div>
   )
 }
