@@ -1,7 +1,8 @@
-import {useEffect, useState, createContext} from "react";
+import {useState, createContext} from "react";
 import './App.css';
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
+import { boardDefault } from './Words';
 
 export const AppContext = createContext();
 
@@ -13,7 +14,7 @@ function App() {
       <nav>
         <h1>Wordle</h1>
       </nav>
-      <AppContext.Provider>
+      <AppContext.Provider value = {{board, setBoard}}>
         <Board/>
         <Keyboard/>
       </AppContext.Provider>
