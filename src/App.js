@@ -1,10 +1,25 @@
-
+import {useEffect, useState, createContext} from "react";
 import './App.css';
+import Board from "./components/Board";
+import Keyboard from "./components/Keyboard";
+
+export const AppContext = createContext();
 
 function App() {
+  const [board, setBoard] = useState(boardDefault);
+
+  useEffect(() => {
+    fetch("")
+  }, []);
   return (
     <div className="App">
-      <h1>Wordle</h1>
+      <nav>
+        <h1>Wordle</h1>
+      </nav>
+      <AppContext.Provider>
+        <Board/>
+        <Keyboard/>
+      </AppContext.Provider>
     </div>
   );
 }
