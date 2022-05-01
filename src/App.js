@@ -8,9 +8,6 @@ export const AppContext = createContext();
 function App() {
   const [board, setBoard] = useState(boardDefault);
 
-  useEffect(() => {
-    fetch("")
-  }, []);
   return (
     <div className="App">
       <nav>
