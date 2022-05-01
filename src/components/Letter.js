@@ -9,4 +9,4 @@ function Letter({ letterPos, attemptValue }) {
   )
 }
 
-export default Letter
+export default Letter;
