@@ -39,8 +39,7 @@ function Keyboard() {
       document.onkeyup = handleKeyboard;
     };
   }, [handleKeyboard]);
-  return (
-    <div className='keyboard'>
+  return <div className='keyboard'>
       <div className="line1">{keys1.map((key) => {
         return <Key keyValue={key} />;
       })}</div>
@@ -55,7 +54,6 @@ function Keyboard() {
       <Key keyValue={"DELETE"} bigKey/>
       </div>
     </div>
-  )
 }
 
 export default Keyboard;
