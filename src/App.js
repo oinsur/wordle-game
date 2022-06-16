@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import {useState, createContext} from "react";
 import './App.css';
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
-import { boardDefault } from './Words';
+import { boardDefault, generateWordSet } from './Words';
 
 export const AppContext = createContext();
 
@@ -11,6 +12,12 @@ function App() {
   const [currentAttempt, setCurrentAttempt] = useState({attempt: 0, letterPos: 0});
 
   const rightWord = "WRONG";
+
+  useEffect (() => {
+generateWordSet().then((words) => {
+  console.log(words);
+});
+  }, []);
 
   const onLetterSelect = (keyValue) => {
     if (currentAttempt.letterPos > 4) return;
